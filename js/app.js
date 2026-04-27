@@ -106,6 +106,34 @@ function showError() {
   resultSection.classList.remove('visible');
 }
 
+// ── Coupon reveal ─────────────────────────────────────────────
+const couponLocked   = document.getElementById('couponLocked');
+const couponRevealed = document.getElementById('couponRevealed');
+const copyBtn        = document.getElementById('copyBtn');
+const COUPON_CODE    = 'GOOGLEDOST';
+
+if (couponLocked) {
+  couponLocked.addEventListener('click', () => {
+    couponLocked.style.display   = 'none';
+    couponRevealed.style.display = 'block';
+  });
+}
+
+if (copyBtn) {
+  copyBtn.addEventListener('click', () => {
+    navigator.clipboard.writeText(COUPON_CODE).then(() => {
+      copyBtn.textContent = '✅ Copied!';
+      copyBtn.classList.add('copied');
+      setTimeout(() => {
+        copyBtn.textContent = '📋 Copy code';
+        copyBtn.classList.remove('copied');
+      }, 2200);
+    }).catch(() => {
+      copyBtn.textContent = COUPON_CODE;
+    });
+  });
+}
+
 // ── Init ──────────────────────────────────────────────────────────────────────
 window.addEventListener('DOMContentLoaded', () => {
   calcBtn.addEventListener('click', (e) => { e.preventDefault(); updateAll(); });
