@@ -671,3 +671,104 @@ body::before {
 
   .footer { flex-direction: column; text-align: center; }
 }
+
+/* ===== NUMEROLOGY STYLED LISTS ===== */
+
+/* Feature list - gold star bullets */
+.feature-list {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 1.5rem;
+}
+
+.feature-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  font-size: 15px;
+  color: #ddd6c8;
+  margin-bottom: 10px;
+  line-height: 1.5;
+}
+
+.feature-list li::before {
+  content: '✦';
+  color: #f5d98a;
+  font-size: 13px;
+  margin-top: 2px;
+  flex-shrink: 0;
+}
+
+/* Crystal chart - numbered gold circles */
+.crystal-list {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 1.5rem;
+}
+
+.crystal-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  font-size: 15px;
+  color: #ddd6c8;
+  padding: 8px 12px;
+  border-bottom: 0.5px solid rgba(245, 217, 138, 0.15);
+  line-height: 1.5;
+}
+
+.crystal-list li:last-child {
+  border-bottom: none;
+}
+
+.crystal-num {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  background: rgba(245, 217, 138, 0.15);
+  border: 1px solid rgba(245, 217, 138, 0.4);
+  color: #f5d98a;
+  font-size: 13px;
+  font-weight: 700;
+  flex-shrink: 0;
+  margin-top: 1px;
+}
+
+.crystal-name {
+  font-weight: 600;
+  color: #f0e8d0;
+}
+
+.crystal-desc {
+  color: #9e9587;
+  font-size: 14px;
+}
+
+/* How to use - diamond gem bullets */
+.usage-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.usage-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  font-size: 15px;
+  color: #ddd6c8;
+  margin-bottom: 10px;
+}
+
+.gem-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 2px;
+  background: linear-gradient(135deg, #c9a96e, #f5d98a);
+  flex-shrink: 0;
+  margin-top: 5px;
+  transform: rotate(45deg);
+}
