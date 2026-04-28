@@ -52,7 +52,7 @@ export const MULANK_CRYSTAL = {
     color: "#c9a84c",
     desc: "Grounds, protects & stabilises your energy field.",
     // ↓ REPLACE with your Gemsmantra Golden Obsidian product link
-    url: "https://gemsmantra.com/products/golden-obsidian-bracelet?ref=HIMANGSHUKALITA",
+    url: "https://gemsmantra.com/products/golden-obsidian-bracelet?_pos=1&_sid=f21610b6b&_ss=r&ref=HIMANGSHUKALITA",
   },
   5: {
     name: "Green Aventurine",
