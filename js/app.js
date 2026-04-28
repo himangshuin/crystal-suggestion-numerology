@@ -30,7 +30,7 @@ function updateAll() {
         1: 'https://gemsmantra.com/?ref=HIMANGSHUKALITA&crystal=ruby_mulank1',
         2: 'https://gemsmantra.com/?ref=HIMANGSHUKALITA&crystal=pearl_mulank2',
         3: 'https://gemsmantra.com/?ref=HIMANGSHUKALITA&crystal=citrine_mulank3',
-        4: 'https://gemsmantra.com/?ref=HIMANGSHUKALITA&crystal=hessonite_mulank4',
+        4: 'https://gemsmantra.com/products/golden-obsidian-bracelet?_pos=1&_sid=f21610b6b&_ss=r&ref=HIMANGSHUKALITA',
         5: 'https://gemsmantra.com/?ref=HIMANGSHUKALITA&crystal=emerald_mulank5',
         6: 'https://gemsmantra.com/?ref=HIMANGSHUKALITA&crystal=rosequartz_mulank6',
         7: 'https://gemsmantra.com/?ref=HIMANGSHUKALITA&crystal=amethyst_mulank7',
