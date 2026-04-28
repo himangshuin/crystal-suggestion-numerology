@@ -25,7 +25,7 @@ export const MULANK_CRYSTAL = {
     color: "#f4a12f",
     desc: "Ignites leadership, confidence & solar vitality.",
     // ↓ REPLACE with your Gemsmantra Sunstone product link
-    url: "https://gemsmantra.com/products/sunstone-bracelet?ref=HIMANGSHUKALITA",
+    url: "https://gemsmantra.com/products/sunstone-bracelet?_pos=1&_sid=fff03cd9d&_ss=r&ref=HIMANGSHUKALITA",
   },
   2: {
     name: "Mother of Pearl",
@@ -34,7 +34,7 @@ export const MULANK_CRYSTAL = {
     color: "#a8d8ea",
     desc: "Enhances intuition, calm & lunar wisdom.",
     // ↓ REPLACE with your Gemsmantra Mother of Pearl product link
-    url: "https://gemsmantra.com/products/mother-of-pearl-bracelet?ref=HIMANGSHUKALITA",
+    url: "https://gemsmantra.com/products/pearl-bracelet?_pos=1&_sid=97bb7bd61&_ss=r&ref=HIMANGSHUKALITA",
   },
   3: {
     name: "Dragon Vein Agate",
@@ -43,7 +43,7 @@ export const MULANK_CRYSTAL = {
     color: "#7ecba1",
     desc: "Boosts creativity, expression & joyful energy.",
     // ↓ REPLACE with your Gemsmantra Dragon Vein Agate product link
-    url: "https://gemsmantra.com/products/dragon-vein-agate-bracelet?ref=HIMANGSHUKALITA",
+    url: "https://gemsmantra.com/products/dragon-vein-agate-bracelet?_pos=1&_sid=ca3b1e01f&_ss=r&ref=HIMANGSHUKALITA",
   },
   4: {
     name: "Golden Obsidian",
@@ -61,7 +61,7 @@ export const MULANK_CRYSTAL = {
     color: "#4caf7d",
     desc: "Attracts luck, adventure & abundance.",
     // ↓ REPLACE with your Gemsmantra Green Aventurine product link
-    url: "https://gemsmantra.com/products/green-aventurine-bracelet?ref=HIMANGSHUKALITA",
+    url: "https://gemsmantra.com/products/aventurine-bracelet?_pos=1&_sid=d4f7195d9&_ss=r&ref=HIMANGSHUKALITA",
   },
   6: {
     name: "Rose Quartz",
