@@ -137,7 +137,7 @@ export const DESTINY_CRYSTAL = {
     color: "#d0e8f0",
     desc: "Clarity, amplification & energetic alignment.",
     // ↓ REPLACE with your Gemsmantra Clear Quartz product link
-    url: "https://gemsmantra.com/products/clear-quartz-bracelet?ref=HIMANGSHUKALITA",
+    url: "https://gemsmantra.com/products/clear-quartz-bracelet?_pos=1&_psq=Clear%20Quartz%20Bracelet&_ss=e&_v=1.0&ref=HIMANGSHUKALITA",
   },
   5: {
     name: "Turquoise",
@@ -146,7 +146,7 @@ export const DESTINY_CRYSTAL = {
     color: "#30bfbf",
     desc: "Adventure, protection & authentic truth.",
     // ↓ REPLACE with your Gemsmantra Turquoise product link
-    url: "https://gemsmantra.com/products/turquoise-bracelet?ref=HIMANGSHUKALITA",
+    url: "https://gemsmantra.com/products/turquoise-bracelet?_pos=1&_psq=Turquoise%20Bracelet&_ss=e&_v=1.0&ref=HIMANGSHUKALITA",
   },
   6: {
     name: "Rhodonite",
@@ -155,7 +155,7 @@ export const DESTINY_CRYSTAL = {
     color: "#d45e8c",
     desc: "Emotional healing, forgiveness & compassion.",
     // ↓ REPLACE with your Gemsmantra Rhodonite product link
-    url: "https://gemsmantra.com/products/rhodonite-bracelet?ref=HIMANGSHUKALITA",
+    url: "https://gemsmantra.com/products/rhodonite-bracelet?_pos=1&_psq=Rhodonite%20Bracelet&_ss=e&_v=1.0&ref=HIMANGSHUKALITA",
   },
   7: {
     name: "Kambaba Jasper",
@@ -164,7 +164,7 @@ export const DESTINY_CRYSTAL = {
     color: "#4e7c59",
     desc: "Spiritual grounding, peace & ancient wisdom.",
     // ↓ REPLACE with your Gemsmantra Kambaba Jasper product link
-    url: "https://gemsmantra.com/products/kambaba-jasper-bracelet?ref=HIMANGSHUKALITA",
+    url: "https://gemsmantra.com/products/natural-kambaba-jasper?_pos=1&_psq=Kambaba%20Jasper%20Bracelet&_ss=e&_v=1.0&ref=HIMANGSHUKALITA",
   },
   8: {
     name: "Sodalite",
@@ -173,7 +173,7 @@ export const DESTINY_CRYSTAL = {
     color: "#3455a4",
     desc: "Logic, manifestation & deep inner clarity.",
     // ↓ REPLACE with your Gemsmantra Sodalite product link
-    url: "https://gemsmantra.com/products/sodalite-bracelet?ref=HIMANGSHUKALITA",
+    url: "https://gemsmantra.com/products/sodalite-bracelet?_pos=1&_psq=Sodalite%20Bracelet&_ss=e&_v=1.0&ref=HIMANGSHUKALITA",
   },
   9: {
     name: "Bloodstone",
@@ -182,7 +182,7 @@ export const DESTINY_CRYSTAL = {
     color: "#c0392b",
     desc: "Vitality, courage & energetic purification.",
     // ↓ REPLACE with your Gemsmantra Bloodstone product link
-    url: "https://gemsmantra.com/products/bloodstone-bracelet?ref=HIMANGSHUKALITA",
+    url: "https://gemsmantra.com/products/blood-stone-bracelet?_pos=1&_psq=Bloodstone%20Bracelet&_ss=e&_v=1.0&ref=HIMANGSHUKALITA",
   },
 };
 
