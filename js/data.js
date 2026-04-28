@@ -131,13 +131,13 @@ export const DESTINY_CRYSTAL = {
     url: "https://gemsmantra.com/products/azurite-bracelet?_pos=1&_psq=Azurite%20Bracelet&_ss=e&_v=1.0&ref=HIMANGSHUKALITA",
   },
   4: {
-    name: "Clear Quartz",
-    full: "Clear Quartz Bracelet",
+    name: "Rock Crystal",
+    full: "Rock Crystal Bracelet",
     emoji: "💎",
     color: "#d0e8f0",
     desc: "Clarity, amplification & energetic alignment.",
     // ↓ REPLACE with your Gemsmantra Clear Quartz product link
-    url: "https://gemsmantra.com/products/clear-quartz-bracelet?_pos=1&_psq=Clear%20Quartz%20Bracelet&_ss=e&_v=1.0&ref=HIMANGSHUKALITA",
+    url: "https://gemsmantra.com/products/rock-crystal-bracelet?_pos=1&_psq=Rock%20Crystal%20Bracelet&_ss=e&_v=1.0&ref=HIMANGSHUKALITA",
   },
   5: {
     name: "Turquoise",
