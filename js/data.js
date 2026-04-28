@@ -2,14 +2,19 @@
  * data.js
  * Crystal mappings, numerology descriptions, and affiliate config
  * WithHimu Crystal Calculator
+ *
+ * HOW TO UPDATE AFFILIATE LINKS
+ * ─────────────────────────────
+ * Every crystal has its own `url` field below.
+ * Just replace the URL string with the exact Gemsmantra product page URL
+ * for that crystal. The ref tag (?ref=HIMANGSHUKALITA) is already included.
+ *
+ * Example:
+ *   url: "https://gemsmantra.com/products/sunstone-bracelet?ref=HIMANGSHUKALITA",
  */
 
+/** Fallback — used only if a crystal url is accidentally left empty */
 export const AFFILIATE_BASE = "https://gemsmantra.com/?ref=HIMANGSHUKALITA";
-
-export function buildAffiliateUrl(searchTerm) {
-  const encoded = encodeURIComponent(searchTerm + " crystal bracelet");
-  return `${AFFILIATE_BASE}&search=${encoded}`;
-}
 
 /** Mulank (Psychic Number) crystal map — keys 1–9 */
 export const MULANK_CRYSTAL = {
@@ -19,7 +24,8 @@ export const MULANK_CRYSTAL = {
     emoji: "🌞",
     color: "#f4a12f",
     desc: "Ignites leadership, confidence & solar vitality.",
-    searchTerm: "Sunstone Bracelet",
+    // ↓ REPLACE with your Gemsmantra Sunstone product link
+    url: "https://gemsmantra.com/products/sunstone-bracelet?ref=HIMANGSHUKALITA",
   },
   2: {
     name: "Mother of Pearl",
@@ -27,7 +33,8 @@ export const MULANK_CRYSTAL = {
     emoji: "🌊",
     color: "#a8d8ea",
     desc: "Enhances intuition, calm & lunar wisdom.",
-    searchTerm: "Mother of Pearl Bracelet",
+    // ↓ REPLACE with your Gemsmantra Mother of Pearl product link
+    url: "https://gemsmantra.com/products/mother-of-pearl-bracelet?ref=HIMANGSHUKALITA",
   },
   3: {
     name: "Dragon Vein Agate",
@@ -35,7 +42,8 @@ export const MULANK_CRYSTAL = {
     emoji: "🐉",
     color: "#7ecba1",
     desc: "Boosts creativity, expression & joyful energy.",
-    searchTerm: "Dragon Vein Agate Bracelet",
+    // ↓ REPLACE with your Gemsmantra Dragon Vein Agate product link
+    url: "https://gemsmantra.com/products/dragon-vein-agate-bracelet?ref=HIMANGSHUKALITA",
   },
   4: {
     name: "Golden Obsidian",
@@ -43,7 +51,8 @@ export const MULANK_CRYSTAL = {
     emoji: "🌑",
     color: "#c9a84c",
     desc: "Grounds, protects & stabilises your energy field.",
-    searchTerm: "Golden Obsidian Bracelet",
+    // ↓ REPLACE with your Gemsmantra Golden Obsidian product link
+    url: "https://gemsmantra.com/products/golden-obsidian-bracelet?ref=HIMANGSHUKALITA",
   },
   5: {
     name: "Green Aventurine",
@@ -51,7 +60,8 @@ export const MULANK_CRYSTAL = {
     emoji: "🍀",
     color: "#4caf7d",
     desc: "Attracts luck, adventure & abundance.",
-    searchTerm: "Green Aventurine Bracelet",
+    // ↓ REPLACE with your Gemsmantra Green Aventurine product link
+    url: "https://gemsmantra.com/products/green-aventurine-bracelet?ref=HIMANGSHUKALITA",
   },
   6: {
     name: "Rose Quartz",
@@ -59,7 +69,8 @@ export const MULANK_CRYSTAL = {
     emoji: "💗",
     color: "#f9a8d4",
     desc: "Opens the heart, nurtures love & compassion.",
-    searchTerm: "Rose Quartz Bracelet",
+    // ↓ REPLACE with your Gemsmantra Rose Quartz product link
+    url: "https://gemsmantra.com/products/rose-quartz-bracelet?ref=HIMANGSHUKALITA",
   },
   7: {
     name: "Cat's Eye",
@@ -67,7 +78,8 @@ export const MULANK_CRYSTAL = {
     emoji: "🐱",
     color: "#c8b96a",
     desc: "Deepens intuition, perception & inner focus.",
-    searchTerm: "Cats Eye Bracelet",
+    // ↓ REPLACE with your Gemsmantra Cat's Eye product link
+    url: "https://gemsmantra.com/products/cats-eye-bracelet?ref=HIMANGSHUKALITA",
   },
   8: {
     name: "Amethyst",
@@ -75,7 +87,8 @@ export const MULANK_CRYSTAL = {
     emoji: "💜",
     color: "#9b59b6",
     desc: "Manifests abundance, wisdom & higher clarity.",
-    searchTerm: "Amethyst Bracelet",
+    // ↓ REPLACE with your Gemsmantra Amethyst product link
+    url: "https://gemsmantra.com/products/amethyst-bracelet?ref=HIMANGSHUKALITA",
   },
   9: {
     name: "Pyrite",
@@ -83,7 +96,8 @@ export const MULANK_CRYSTAL = {
     emoji: "✨",
     color: "#d4af37",
     desc: "Attracts wealth, willpower & bold action.",
-    searchTerm: "Pyrite Bracelet",
+    // ↓ REPLACE with your Gemsmantra Pyrite product link
+    url: "https://gemsmantra.com/products/pyrite-bracelet?ref=HIMANGSHUKALITA",
   },
 };
 
@@ -95,7 +109,8 @@ export const DESTINY_CRYSTAL = {
     emoji: "🐯",
     color: "#c8832a",
     desc: "Courage, strength & grounded decisive action.",
-    searchTerm: "Tiger Eye Bracelet",
+    // ↓ REPLACE with your Gemsmantra Tiger Eye product link
+    url: "https://gemsmantra.com/products/tiger-eye-bracelet?ref=HIMANGSHUKALITA",
   },
   2: {
     name: "Green Jade",
@@ -103,7 +118,8 @@ export const DESTINY_CRYSTAL = {
     emoji: "🟢",
     color: "#3aad6e",
     desc: "Harmony, luck & deep emotional balance.",
-    searchTerm: "Green Jade Bracelet",
+    // ↓ REPLACE with your Gemsmantra Green Jade product link
+    url: "https://gemsmantra.com/products/green-jade-bracelet?ref=HIMANGSHUKALITA",
   },
   3: {
     name: "Azurite",
@@ -111,7 +127,8 @@ export const DESTINY_CRYSTAL = {
     emoji: "🔵",
     color: "#2980b9",
     desc: "Inspiration, psychic expansion & truth-speaking.",
-    searchTerm: "Azurite Bracelet",
+    // ↓ REPLACE with your Gemsmantra Azurite product link
+    url: "https://gemsmantra.com/products/azurite-bracelet?ref=HIMANGSHUKALITA",
   },
   4: {
     name: "Clear Quartz",
@@ -119,7 +136,8 @@ export const DESTINY_CRYSTAL = {
     emoji: "💎",
     color: "#d0e8f0",
     desc: "Clarity, amplification & energetic alignment.",
-    searchTerm: "Clear Quartz Bracelet",
+    // ↓ REPLACE with your Gemsmantra Clear Quartz product link
+    url: "https://gemsmantra.com/products/clear-quartz-bracelet?ref=HIMANGSHUKALITA",
   },
   5: {
     name: "Turquoise",
@@ -127,7 +145,8 @@ export const DESTINY_CRYSTAL = {
     emoji: "🩵",
     color: "#30bfbf",
     desc: "Adventure, protection & authentic truth.",
-    searchTerm: "Turquoise Bracelet",
+    // ↓ REPLACE with your Gemsmantra Turquoise product link
+    url: "https://gemsmantra.com/products/turquoise-bracelet?ref=HIMANGSHUKALITA",
   },
   6: {
     name: "Rhodonite",
@@ -135,7 +154,8 @@ export const DESTINY_CRYSTAL = {
     emoji: "🌸",
     color: "#d45e8c",
     desc: "Emotional healing, forgiveness & compassion.",
-    searchTerm: "Rhodonite Bracelet",
+    // ↓ REPLACE with your Gemsmantra Rhodonite product link
+    url: "https://gemsmantra.com/products/rhodonite-bracelet?ref=HIMANGSHUKALITA",
   },
   7: {
     name: "Kambaba Jasper",
@@ -143,7 +163,8 @@ export const DESTINY_CRYSTAL = {
     emoji: "🌿",
     color: "#4e7c59",
     desc: "Spiritual grounding, peace & ancient wisdom.",
-    searchTerm: "Kambaba Jasper Bracelet",
+    // ↓ REPLACE with your Gemsmantra Kambaba Jasper product link
+    url: "https://gemsmantra.com/products/kambaba-jasper-bracelet?ref=HIMANGSHUKALITA",
   },
   8: {
     name: "Sodalite",
@@ -151,7 +172,8 @@ export const DESTINY_CRYSTAL = {
     emoji: "🪬",
     color: "#3455a4",
     desc: "Logic, manifestation & deep inner clarity.",
-    searchTerm: "Sodalite Bracelet",
+    // ↓ REPLACE with your Gemsmantra Sodalite product link
+    url: "https://gemsmantra.com/products/sodalite-bracelet?ref=HIMANGSHUKALITA",
   },
   9: {
     name: "Bloodstone",
@@ -159,7 +181,8 @@ export const DESTINY_CRYSTAL = {
     emoji: "🔴",
     color: "#c0392b",
     desc: "Vitality, courage & energetic purification.",
-    searchTerm: "Bloodstone Bracelet",
+    // ↓ REPLACE with your Gemsmantra Bloodstone product link
+    url: "https://gemsmantra.com/products/bloodstone-bracelet?ref=HIMANGSHUKALITA",
   },
 };
 
