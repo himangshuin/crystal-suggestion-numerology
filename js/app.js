@@ -1,3 +1,39 @@
+/**
+ * app.js
+ * Main UI controller — wires DOM to numerology engine & data
+ * WithHimu Crystal Calculator
+ */
+
+import { calculateMulank, calculateDestinyNumber, parseDate } from './numerology.js';
+import {
+  MULANK_CRYSTAL, DESTINY_CRYSTAL,
+  MULANK_DESC, DESTINY_DESC,
+  buildAffiliateUrl,
+} from './data.js';
+
+// ── DOM refs ──────────────────────────────────────────────────────────────────
+const dobInput        = document.getElementById('dobInput');
+const calcBtn         = document.getElementById('calcBtn');
+
+const mulankValue     = document.getElementById('mulankValue');
+const destinyValue    = document.getElementById('destinyValue');
+const mulankDesc      = document.getElementById('mulankDesc');
+const destinyDesc     = document.getElementById('destinyDesc');
+
+const mulankCrystalEl = document.getElementById('mulankCrystalName');
+const mulankDescEl    = document.getElementById('mulankCrystalDesc');
+const mulankAffEl     = document.getElementById('mulankAffiliateLink');
+const mulankEmoji     = document.getElementById('mulankEmoji');
+
+const destCrystalEl   = document.getElementById('destinyCrystalName');
+const destDescEl      = document.getElementById('destinyCrystalDesc');
+const destAffEl       = document.getElementById('destinyAffiliateLink');
+const destEmoji       = document.getElementById('destinyEmoji');
+
+const infoNote        = document.getElementById('infoNote');
+const resultSection   = document.getElementById('resultSection');
+
+// ── Core update function ──────────────────────────────────────────────────────
 function updateAll() {
   const parsed = parseDate(dobInput.value);
 
@@ -20,47 +56,19 @@ function updateAll() {
   const mC = MULANK_CRYSTAL[mulank];
   const dC = DESTINY_CRYSTAL[destiny];
 
-  // ---- MULANK with UNIQUE AFFILIATE LINKS ----
   if (mC) {
     mulankCrystalEl.textContent = mC.full;
     mulankDescEl.textContent    = mC.desc;
-    
-    // Different link for each Mulank value (1-9)
-    const mulankAffiliateUrls = {
-        1: 'https://gemsmantra.com/?ref=HIMANGSHUKALITA&crystal=ruby_mulank1',
-        2: 'https://gemsmantra.com/?ref=HIMANGSHUKALITA&crystal=pearl_mulank2',
-        3: 'https://gemsmantra.com/?ref=HIMANGSHUKALITA&crystal=citrine_mulank3',
-        4: 'https://gemsmantra.com/products/golden-obsidian-bracelet?_pos=1&_sid=f21610b6b&_ss=r&ref=HIMANGSHUKALITA',
-        5: 'https://gemsmantra.com/?ref=HIMANGSHUKALITA&crystal=emerald_mulank5',
-        6: 'https://gemsmantra.com/?ref=HIMANGSHUKALITA&crystal=rosequartz_mulank6',
-        7: 'https://gemsmantra.com/?ref=HIMANGSHUKALITA&crystal=amethyst_mulank7',
-        8: 'https://gemsmantra.com/?ref=HIMANGSHUKALITA&crystal=sapphire_mulank8',
-        9: 'https://gemsmantra.com/?ref=HIMANGSHUKALITA&crystal=coral_mulank9'
-    };
-    mulankAffEl.href = mulankAffiliateUrls[mulank] || buildAffiliateUrl(mC.searchTerm);
+    mulankAffEl.href            = buildAffiliateUrl(mC.searchTerm);
     mulankAffEl.textContent     = `✨ Shop ${mC.name} →`;
     mulankEmoji.textContent     = mC.emoji;
     mulankEmoji.style.color     = mC.color;
   }
 
-  // ---- DESTINY with UNIQUE AFFILIATE LINKS ----
   if (dC) {
     destCrystalEl.textContent = dC.full;
     destDescEl.textContent    = dC.desc;
-    
-    // Different link for each Destiny value (1-9)
-    const destinyAffiliateUrls = {
-        1: 'https://gemsmantra.com/?ref=HIMANGSHUKALITA&crystal=sunstone_destiny1',
-        2: 'https://gemsmantra.com/?ref=HIMANGSHUKALITA&crystal=jade_destiny2',
-        3: 'https://gemsmantra.com/?ref=HIMANGSHUKALITA&crystal=citrine_destiny3',
-        4: 'https://gemsmantra.com/?ref=HIMANGSHUKALITA&crystal=hessonite_destiny4',
-        5: 'https://gemsmantra.com/?ref=HIMANGSHUKALITA&crystal=emerald_destiny5',
-        6: 'https://gemsmantra.com/?ref=HIMANGSHUKALITA&crystal=rosequartz_destiny6',
-        7: 'https://gemsmantra.com/?ref=HIMANGSHUKALITA&crystal=amethyst_destiny7',
-        8: 'https://gemsmantra.com/?ref=HIMANGSHUKALITA&crystal=bluesapphire_destiny8',
-        9: 'https://gemsmantra.com/?ref=HIMANGSHUKALITA&crystal=redcoral_destiny9'
-    };
-    destAffEl.href = destinyAffiliateUrls[destiny] || buildAffiliateUrl(dC.searchTerm);
+    destAffEl.href            = buildAffiliateUrl(dC.searchTerm);
     destAffEl.textContent     = `✨ Shop ${dC.name} →`;
     destEmoji.textContent     = dC.emoji;
     destEmoji.style.color     = dC.color;
@@ -78,3 +86,59 @@ function updateAll() {
   // Reveal result section with animation
   resultSection.classList.add('visible');
 }
+
+function animateNumber(el, target) {
+  el.style.transform = 'scale(1.3)';
+  el.style.opacity   = '0.4';
+  el.textContent     = target;
+  setTimeout(() => {
+    el.style.transform = 'scale(1)';
+    el.style.opacity   = '1';
+  }, 80);
+}
+
+function showError() {
+  mulankValue.textContent  = '?';
+  destinyValue.textContent = '?';
+  mulankDesc.textContent   = 'Invalid date';
+  destinyDesc.textContent  = 'Please select a valid date of birth';
+  infoNote.innerHTML       = '⚠️ Please select a valid date of birth.';
+  resultSection.classList.remove('visible');
+}
+
+// ── Coupon reveal ─────────────────────────────────────────────
+const couponLocked   = document.getElementById('couponLocked');
+const couponRevealed = document.getElementById('couponRevealed');
+const copyBtn        = document.getElementById('copyBtn');
+const COUPON_CODE    = 'GOOGLEDOST';
+
+if (couponLocked) {
+  couponLocked.addEventListener('click', () => {
+    couponLocked.style.display   = 'none';
+    couponRevealed.style.display = 'block';
+  });
+}
+
+if (copyBtn) {
+  copyBtn.addEventListener('click', () => {
+    navigator.clipboard.writeText(COUPON_CODE).then(() => {
+      copyBtn.textContent = '✅ Copied!';
+      copyBtn.classList.add('copied');
+      setTimeout(() => {
+        copyBtn.textContent = '📋 Copy code';
+        copyBtn.classList.remove('copied');
+      }, 2200);
+    }).catch(() => {
+      copyBtn.textContent = COUPON_CODE;
+    });
+  });
+}
+
+// ── Init ──────────────────────────────────────────────────────────────────────
+window.addEventListener('DOMContentLoaded', () => {
+  calcBtn.addEventListener('click', (e) => { e.preventDefault(); updateAll(); });
+  dobInput.addEventListener('change', updateAll);
+
+  // Run on load with default date
+  if (dobInput.value) updateAll();
+});
