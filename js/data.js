@@ -70,7 +70,7 @@ export const MULANK_CRYSTAL = {
     color: "#f9a8d4",
     desc: "Opens the heart, nurtures love & compassion.",
     // ↓ REPLACE with your Gemsmantra Rose Quartz product link
-    url: "https://gemsmantra.com/products/rose-quartz-bracelet?ref=HIMANGSHUKALITA",
+    url: "https://gemsmantra.com/products/rose-quartz-bracelet?_pos=1&_sid=dc55179c2&_ss=r&ref=HIMANGSHUKALITA",
   },
   7: {
     name: "Cat's Eye",
@@ -79,7 +79,7 @@ export const MULANK_CRYSTAL = {
     color: "#c8b96a",
     desc: "Deepens intuition, perception & inner focus.",
     // ↓ REPLACE with your Gemsmantra Cat's Eye product link
-    url: "https://gemsmantra.com/products/cats-eye-bracelet?ref=HIMANGSHUKALITA",
+    url: "https://gemsmantra.com/products/cats-eye-bracelet?_pos=1&_psq=Cat%27s%20Eye%20Bracelet&_ss=e&_v=1.0&ref=HIMANGSHUKALITA",
   },
   8: {
     name: "Amethyst",
@@ -88,7 +88,7 @@ export const MULANK_CRYSTAL = {
     color: "#9b59b6",
     desc: "Manifests abundance, wisdom & higher clarity.",
     // ↓ REPLACE with your Gemsmantra Amethyst product link
-    url: "https://gemsmantra.com/products/amethyst-bracelet?ref=HIMANGSHUKALITA",
+    url: "https://gemsmantra.com/products/amethyst-bracelet?_pos=1&_psq=Amethyst%20Bracelet&_ss=e&_v=1.0&ref=HIMANGSHUKALITA",
   },
   9: {
     name: "Pyrite",
@@ -97,7 +97,7 @@ export const MULANK_CRYSTAL = {
     color: "#d4af37",
     desc: "Attracts wealth, willpower & bold action.",
     // ↓ REPLACE with your Gemsmantra Pyrite product link
-    url: "https://gemsmantra.com/products/pyrite-bracelet?ref=HIMANGSHUKALITA",
+    url: "https://gemsmantra.com/products/pyrite-bracelet?_pos=1&_psq=Pyrite%20Bracelet&_ss=e&_v=1.0&ref=HIMANGSHUKALITA",
   },
 };
 
@@ -110,7 +110,7 @@ export const DESTINY_CRYSTAL = {
     color: "#c8832a",
     desc: "Courage, strength & grounded decisive action.",
     // ↓ REPLACE with your Gemsmantra Tiger Eye product link
-    url: "https://gemsmantra.com/products/tiger-eye-bracelet?ref=HIMANGSHUKALITA",
+    url: "https://gemsmantra.com/products/brown-tiger-eye-bracelet?_pos=1&_psq=Tiger%20Eye%20Bracelet&_ss=e&_v=1.0&ref=HIMANGSHUKALITA",
   },
   2: {
     name: "Green Jade",
@@ -119,7 +119,7 @@ export const DESTINY_CRYSTAL = {
     color: "#3aad6e",
     desc: "Harmony, luck & deep emotional balance.",
     // ↓ REPLACE with your Gemsmantra Green Jade product link
-    url: "https://gemsmantra.com/products/green-jade-bracelet?ref=HIMANGSHUKALITA",
+    url: "https://gemsmantra.com/products/jade-bracelet?_pos=3&_sid=95da0a5ae&_ss=r&ref=HIMANGSHUKALITA",
   },
   3: {
     name: "Azurite",
@@ -128,7 +128,7 @@ export const DESTINY_CRYSTAL = {
     color: "#2980b9",
     desc: "Inspiration, psychic expansion & truth-speaking.",
     // ↓ REPLACE with your Gemsmantra Azurite product link
-    url: "https://gemsmantra.com/products/azurite-bracelet?ref=HIMANGSHUKALITA",
+    url: "https://gemsmantra.com/products/azurite-bracelet?_pos=1&_psq=Azurite%20Bracelet&_ss=e&_v=1.0&ref=HIMANGSHUKALITA",
   },
   4: {
     name: "Clear Quartz",
