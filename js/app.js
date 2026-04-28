@@ -8,7 +8,7 @@ import { calculateMulank, calculateDestinyNumber, parseDate } from './numerology
 import {
   MULANK_CRYSTAL, DESTINY_CRYSTAL,
   MULANK_DESC, DESTINY_DESC,
-  buildAffiliateUrl,
+  AFFILIATE_BASE,
 } from './data.js';
 
 // ── DOM refs ──────────────────────────────────────────────────────────────────
@@ -59,7 +59,7 @@ function updateAll() {
   if (mC) {
     mulankCrystalEl.textContent = mC.full;
     mulankDescEl.textContent    = mC.desc;
-    mulankAffEl.href            = buildAffiliateUrl(mC.searchTerm);
+    mulankAffEl.href            = mC.url || AFFILIATE_BASE;
     mulankAffEl.textContent     = `✨ Shop ${mC.name} →`;
     mulankEmoji.textContent     = mC.emoji;
     mulankEmoji.style.color     = mC.color;
@@ -68,7 +68,7 @@ function updateAll() {
   if (dC) {
     destCrystalEl.textContent = dC.full;
     destDescEl.textContent    = dC.desc;
-    destAffEl.href            = buildAffiliateUrl(dC.searchTerm);
+    destAffEl.href            = dC.url || AFFILIATE_BASE;
     destAffEl.textContent     = `✨ Shop ${dC.name} →`;
     destEmoji.textContent     = dC.emoji;
     destEmoji.style.color     = dC.color;
