@@ -357,72 +357,117 @@
 
 <!-- ES module scripts — no bundler needed for GitHub Pages -->
 <script type="module" src="js/app.js"></script>
-  <!-- Floating WhatsApp Share Button -->
-<a href="#" id="whatsappShareBtn" class="floating-whatsapp" aria-label="Share on WhatsApp">
-  <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 32 32" fill="white">
-    <path d="M19.11 17.34c-.3-.15-1.77-.87-2.05-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.17-.17.2-.35.22-.65.07-.3-.15-1.25-.46-2.38-1.46-.88-.79-1.47-1.77-1.64-2.07-.17-.3-.02-.46.13-.61.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.07-.15-.67-1.62-.92-2.22-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.8.37-.27.3-1.05 1.02-1.05 2.5 0 1.47 1.07 2.9 1.22 3.1.15.2 2.1 3.2 5.1 4.49.71.31 1.27.49 1.7.62.71.22 1.35.19 1.86.12.57-.08 1.77-.72 2.02-1.42.25-.69.25-1.29.17-1.42-.07-.12-.27-.2-.57-.35z"/>
-    <path d="M16.02 3C8.84 3 3 8.74 3 15.82c0 2.5.73 4.94 2.11 7.03L3 29l6.34-2.04a13.1 13.1 0 0 0 6.68 1.82h.01c7.18 0 13.02-5.74 13.02-12.82C29.05 8.74 23.2 3 16.02 3zm0 23.5c-2.02 0-4-.54-5.73-1.57l-.41-.24-3.76 1.2 1.22-3.66-.27-.43a10.37 10.37 0 0 1-1.6-5.55c0-5.76 4.75-10.45 10.58-10.45 5.83 0 10.58 4.69 10.58 10.45 0 5.76-4.75 10.45-10.61 10.45z"/>
-  </svg>
-</a>
-
+<!-- Floating WhatsApp Share Button -->
 <style>
-.floating-whatsapp{
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-  width: 62px;
-  height: 62px;
-  background: #25D366;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  box-shadow: 0 6px 18px rgba(0,0,0,0.25);
-  z-index: 9999;
-  transition: all 0.3s ease;
-  text-decoration: none;
-}
-
-.floating-whatsapp:hover{
-  transform: scale(1.1);
-  box-shadow: 0 8px 24px rgba(0,0,0,0.35);
-}
-
-.floating-whatsapp svg{
-  width: 30px;
-  height: 30px;
-}
-
-@media(max-width:768px){
-  .floating-whatsapp{
-    width: 56px;
-    height: 56px;
-    bottom: 16px;
-    right: 16px;
+  .wa-fab {
+    position: fixed;
+    bottom: 28px;
+    right: 28px;
+    z-index: 9999;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    font-family: inherit;
   }
-}
+  .wa-label {
+    background: #25D366;
+    color: #fff;
+    font-size: 13px;
+    font-weight: 500;
+    height: 48px;
+    line-height: 48px;
+    border-radius: 24px 0 0 24px;
+    white-space: nowrap;
+    max-width: 0;
+    overflow: hidden;
+    opacity: 0;
+    transition: max-width 0.35s cubic-bezier(.4,0,.2,1), opacity 0.25s ease, padding 0.35s ease;
+    pointer-events: none;
+  }
+  .wa-fab:hover .wa-label {
+    max-width: 170px;
+    opacity: 1;
+    padding: 0 4px 0 18px;
+    pointer-events: auto;
+  }
+  .wa-icon {
+    width: 52px;
+    height: 52px;
+    background: #25D366;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    box-shadow: 0 4px 16px rgba(37,211,102,0.38), 0 1px 4px rgba(0,0,0,0.12);
+    transition: transform 0.18s ease, box-shadow 0.18s ease;
+    position: relative;
+  }
+  .wa-fab:hover .wa-icon { transform: scale(1.08); }
+  .wa-fab:active .wa-icon { transform: scale(0.96); }
+  .wa-pulse {
+    position: absolute; inset: 0;
+    border-radius: 50%;
+    background: rgba(37,211,102,0.35);
+    animation: waPulse 2.4s ease-out infinite;
+    pointer-events: none;
+  }
+  @keyframes waPulse {
+    0%   { transform: scale(1);    opacity: 0.7; }
+    70%  { transform: scale(1.55); opacity: 0; }
+    100% { transform: scale(1.55); opacity: 0; }
+  }
+  .wa-toast {
+    position: fixed;
+    bottom: 96px;
+    right: 28px;
+    background: rgba(20,20,20,0.9);
+    color: #fff;
+    font-size: 13px;
+    padding: 10px 18px;
+    border-radius: 10px;
+    z-index: 99999;
+    opacity: 0;
+    transform: translateY(8px);
+    transition: opacity 0.25s ease, transform 0.25s ease;
+    pointer-events: none;
+  }
+  .wa-toast.show { opacity: 1; transform: translateY(0); }
 </style>
 
+<div class="wa-fab" id="waFab" role="button" tabindex="0" aria-label="Share on WhatsApp">
+  <span class="wa-label">Share on WhatsApp</span>
+  <div class="wa-icon">
+    <div class="wa-pulse"></div>
+    <svg width="26" height="26" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path fill-rule="evenodd" clip-rule="evenodd" d="M16 3C8.82 3 3 8.82 3 16c0 2.32.63 4.5 1.73 6.37L3 29l6.83-1.74A13 13 0 0016 29c7.18 0 13-5.82 13-13S23.18 3 16 3zm-3.38 7.25c-.3-.68-.62-.69-.9-.7l-.77-.01c-.27 0-.7.1-1.06.5-.37.4-1.4 1.37-1.4 3.34s1.44 3.87 1.64 4.14c.2.27 2.78 4.42 6.86 6.02 3.4 1.34 4.08 1.07 4.82.99.73-.07 2.36-.97 2.7-1.9.33-.93.33-1.73.23-1.9-.1-.17-.36-.27-.75-.47-.4-.2-2.36-1.16-2.73-1.3-.37-.13-.64-.2-.9.2-.27.4-1.04 1.3-1.27 1.57-.23.27-.47.3-.87.1-.4-.2-1.68-.62-3.2-1.97-1.18-1.06-1.97-2.36-2.2-2.76-.23-.4-.02-.62.17-.82.18-.18.4-.46.6-.7.2-.23.27-.4.4-.66.13-.27.07-.5-.03-.7-.1-.2-.88-2.16-1.23-2.97z" fill="white"/>
+    </svg>
+  </div>
+</div>
+<div class="wa-toast" id="waToast">Opening WhatsApp…</div>
+
 <script>
-document.getElementById('whatsappShareBtn').addEventListener('click', function(e){
-  e.preventDefault();
+(function() {
+  const fab = document.getElementById('waFab');
+  const toast = document.getElementById('waToast');
 
-  const shareText =
-`✨ Check out this Free Crystal Suggestion Calculator
+  function showToast(msg) {
+    toast.textContent = msg;
+    toast.classList.add('show');
+    setTimeout(() => toast.classList.remove('show'), 2200);
+  }
 
-🔮 Discover your:
-• Mulank Number
-• Destiny Number
-• Sacred Crystal Recommendation
+  function doShare() {
+    const shareText = `✨ Check out Crystal Guide\n\n🔮 Discover your ideal healing crystals\n💎 with date of birth recommendations\n\nExplore here:\n${window.location.href}`;
+    window.open('https://wa.me/?text=' + encodeURIComponent(shareText), '_blank');
+    showToast('Opening WhatsApp…');
+  }
 
-Try it here:
-${window.location.href}`;
-
-  const whatsappURL =
-    "https://wa.me/?text=" + encodeURIComponent(shareText);
-
-  window.open(whatsappURL, '_blank');
-});
+  fab.addEventListener('click', doShare);
+  fab.addEventListener('keydown', e => {
+    if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); doShare(); }
+  });
+})();
 </script>
 </body>
 </html>
